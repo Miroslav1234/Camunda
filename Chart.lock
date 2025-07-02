@@ -1,0 +1,18 @@
+dependencies:
+- name: keycloak
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 22.2.6
+- name: postgresql
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 15.5.38
+- name: web-modeler-postgresql
+  repository: file://../web-modeler-postgresql-15
+  version: 15.5.28
+- name: elasticsearch
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 21.3.22
+- name: common
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 2.26.0
+digest: sha256:a1008ec8e6a19a81e564850184542149cf906f2bf2715193951854978ec1943e
+generated: "2024-10-30T17:17:44.139572717Z"
