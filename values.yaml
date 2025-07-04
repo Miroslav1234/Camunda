@@ -307,7 +307,7 @@ global:
         # Should be publicly accessible, the default value works if a port-forward to Tasklist is created to 8082.
         # Can be overwritten if ingress is in use and an external IP is available.
         # MV
-        redirectUrl: "https://agendy-test/tasklist"
+        redirectUrl: "https://agendy-prod/tasklist"
 
       ## @extra global.identity.auth.optimize configuration to configure Optimize authentication specifics on global level, which can be accessed by other sub-charts
       optimize:
