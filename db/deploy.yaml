@@ -3,9 +3,14 @@ kind: Deployment
 metadata:
   name: mysql-mkcr
   namespace: db
+  labels:
+    app: mkcr-db
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
+  selector:
+    matchLabels:
+      app: mkcr-db
   template:
     metadata:
       creationTimestamp: null
