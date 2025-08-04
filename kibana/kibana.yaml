@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kibana
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kibana
+  template:
+    metadata:
+      labels:
+        app: kibana
+    spec:
+      containers:
+      - name: kibana
+        image: kibana:8.15.2
+        env:
+        - name: ELASTICSEARCH_HOSTS
+          value: "http://camunda-elasticsearch-master-hl:9200"
+        ports:
+        - containerPort: 5601
+          name: kibana
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: camunda-kibana
+  namespace: default
+spec:
+  selector:
+    app: kibana
+  ports:
+    - protocol: TCP
+      port: 5601
+      targetPort: 5601
+  type: ClusterIP
